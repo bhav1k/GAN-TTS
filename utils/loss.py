@@ -12,6 +12,7 @@ def stft(x, fft_size, hop_size, win_size, window):
         Tensor: Magnitude spectrogram (B, T, fft_size // 2 + 1).
 
     """
+    window = window.to(x.device)
     x_stft = torch.stft(x, fft_size, hop_size, win_size, window, return_complex=True)
     real = x_stft.real
     imag = x_stft.imag
