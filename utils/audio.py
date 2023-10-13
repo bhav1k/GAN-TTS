@@ -2,7 +2,7 @@ import numpy as np
 import librosa
 import scipy
 
-sample_rate = 24000
+sample_rate = 22050
 n_fft = 2048
 fft_bins = n_fft // 2 + 1
 num_mels = 80
@@ -35,7 +35,7 @@ def linear_to_mel(spectrogram):
     return np.dot(mel_basis, spectrogram)
 
 def build_mel_basis():
-    return librosa.filters.mel(sample_rate, n_fft, n_mels=num_mels, fmin=fmin)
+    return librosa.filters.mel(sr=sample_rate, n_fft=n_fft, n_mels=num_mels, fmin=fmin)
 
 def normalize(S):
     return np.clip((S - min_level_db) / -min_level_db, 0, 1)
