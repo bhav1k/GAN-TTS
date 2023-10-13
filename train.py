@@ -226,7 +226,7 @@ def main():
     parser.add_argument('--epochs', type=int, default=50000)
     parser.add_argument('--checkpoint_dir', type=str, default="logdir", help="Directory to save model")
     parser.add_argument('--resume', type=str, default=None, help="The model name to restore")
-    parser.add_argument('--checkpoint_step', type=int, default=500)
+    parser.add_argument('--checkpoint_step', type=int, default=5000)
     parser.add_argument('--summary_step', type=int, default=100)
     parser.add_argument('--use_cuda', type=_str_to_bool, default=True)
     parser.add_argument('--g_learning_rate', type=float, default=0.0001)
